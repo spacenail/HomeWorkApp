@@ -21,4 +21,10 @@ public class HomeWorkApp {
     static boolean thirdMethod(int a){
         return a < 0;
     }
+
+    static void fourthMethod(String text, int repeat){
+        for(int i = 0; i < repeat; i++){
+            System.out.println(text);
+        }
+    }
 }
