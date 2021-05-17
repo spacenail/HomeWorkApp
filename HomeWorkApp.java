@@ -17,4 +17,8 @@ public class HomeWorkApp {
             System.out.println("Число а=" + a +" отрицательное");
         }
     }
+
+    static boolean thirdMethod(int a){
+        return a < 0;
+    }
 }
