@@ -6,14 +6,22 @@ public class HomeWorkApp {
 [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1,
  1 на 0;
  */
-        int[] array = new int[10];
-        arrayInit(array);
-        arrayReverse(array);
+        int[] array1 = new int[10];
+        arrayInit1(array1);
+        arrayReverse(array1);
+
+/*2. Задать пустой целочисленный массив длиной 100. С помощью цикла
+заполнить его значениями 1 2 3 4 5 6 7 8 … 100;*/
+        int[] array2 = new int[100];
+        arrayInit2(array2);
     }
 
-    static void arrayInit(int[] array) {
+    static void arrayInit1(int[] array) {
         Random rnd = new Random();
         for (int i = 0; i < array.length; i++) { array[i] = rnd.nextInt(2); }
+    }
+    static void arrayInit2(int[] array) {
+        for (int i = 0; i < array.length; i++) { array[i] = i + 1; }
     }
 
     static void arrayReverse(int[] array){
