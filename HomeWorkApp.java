@@ -33,7 +33,16 @@ public class HomeWorkApp {
         arrayInit4(array4);
         //arrayPrint(array4);
 
+    /* 5. Написать метод, принимающий на вход два аргумента: len и initialValue,
+ и возвращающий одномерный массив типа int длиной len, каждая ячейка которого
+  равна initialValue; */
+
+        //arrayPrint(arrayInit5(10,1));
+
+
     }
+
+
 
     static void arrayInit1(int[] array) {
         Random rnd = new Random();
@@ -60,9 +69,14 @@ public class HomeWorkApp {
         for (int i = 0; i < array.length; i++) {
             System.out.println();
             for(int j = 0; j < array[i].length;j++){
-                if(i == j){ array[i][j] = 1;}
                 System.out.print(array[i][j]);
             }
+        }
+    }
+
+    static void arrayPrint(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
     }
 
@@ -81,6 +95,14 @@ public class HomeWorkApp {
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) { array[i] = array[i] * 2; }
         }
+    }
+
+    static int[] arrayInit5(int len, int initialValue){
+        int[] array = new int[len];
+        for (int i = 0; i < array.length; i++){
+            array[i] = initialValue;
+        }
+        return array;
     }
 }
 
