@@ -8,7 +8,7 @@ public class HomeWorkApp {
  1 на 0;*/
 
         int[] array1 = new int[10];
-        arrayInit1(array1);
+        arrayInit1(array1, 2);
         arrayMod1(array1);
 
 /*2. Задать пустой целочисленный массив длиной 100. С помощью цикла
@@ -39,15 +39,27 @@ public class HomeWorkApp {
 
         //arrayPrint(arrayInit5(10,1));
 
+        /* 6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы*/
 
+        int[] array6 = {0, 1, 2, 3, 23, 5, 6, -1, 1};
+        int min = 0, max = 0;
+        for (int i = 0; i < array6.length; i++) {
+            if (array6[i] > max) {
+                max = array6[i];
+            }
+            if (array6[i] < min) {
+                min = array6[i];
+            }
+        }
+        //System.out.printf("min=%s max=%s", min, max);
     }
 
 
 
-    static void arrayInit1(int[] array) {
+    static void arrayInit1(int[] array, int bound) {
         Random rnd = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = rnd.nextInt(2);
+            array[i] = rnd.nextInt(bound);
         }
     }
 
