@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class HomeWorkApp {
@@ -24,16 +23,16 @@ public class HomeWorkApp {
         arrayMod3(array3);
 
 /*4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов
- одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами
-  (можно только одну из диагоналей, если обе сложно). Определить элементы одной из
-   диагоналей можно по следующему принципу: индексы таких элементов равны, то есть
-    [0][0], [1][1], [2][2], …, [n][n];
+одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами
+(можно только одну из диагоналей, если обе сложно). Определить элементы одной из
+диагоналей можно по следующему принципу: индексы таких элементов равны, то есть
+[0][0], [1][1], [2][2], …, [n][n];
  */
         int[][] array4 = new int[10][10];
         arrayInit4(array4);
         //arrayPrint(array4);
 
-    /* 5. Написать метод, принимающий на вход два аргумента: len и initialValue,
+/* 5. Написать метод, принимающий на вход два аргумента: len и initialValue,
  и возвращающий одномерный массив типа int длиной len, каждая ячейка которого
   равна initialValue; */
 
@@ -52,8 +51,14 @@ public class HomeWorkApp {
             }
         }
         //System.out.printf("min=%s max=%s", min, max);
-    }
 
+/*7. ** Написать метод, в который передается не пустой
+одномерный целочисленный массив, метод должен вернуть true,
+если в массиве есть место, в котором сумма левой и правой части массива равны.*/
+
+        //int[] array7 = {2, 2, 2, 1, 2, 2, 10, 1};
+        //System.out.println(arrayMod7(array7));
+    }
 
 
     static void arrayInit1(int[] array, int bound) {
@@ -71,16 +76,19 @@ public class HomeWorkApp {
 
     static void arrayInit4(int[][] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i][array[i].length-(1+i)] = 1;
-            for(int j = 0; j < array[i].length; j++){
-                if(i == j){ array[i][j] = 1;}
+            array[i][array[i].length - (1 + i)] = 1;
+            for (int j = 0; j < array[i].length; j++) {
+                if (i == j) {
+                    array[i][j] = 1;
+                }
             }
         }
     }
+
     static void arrayPrint(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println();
-            for(int j = 0; j < array[i].length;j++){
+            for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j]);
             }
         }
@@ -105,16 +113,31 @@ public class HomeWorkApp {
 
     static void arrayMod3(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < 6) { array[i] = array[i] * 2; }
+            if (array[i] < 6) {
+                array[i] = array[i] * 2;
+            }
         }
     }
 
-    static int[] arrayInit5(int len, int initialValue){
+    static int[] arrayInit5(int len, int initialValue) {
         int[] array = new int[len];
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = initialValue;
         }
         return array;
+    }
+
+    static boolean arrayMod7(int[] array) {
+        int sumL = 0, sumR = 0;
+        for (int j = 0; j < array.length; j++) {
+            sumR += array[j];
+        }
+        for (int i = 0; i < array.length; i++) {
+            sumL += array[i];
+            sumR -=array[i];
+            if (sumL == sumR) { return true; }
+        }
+        return false;
     }
 }
 
