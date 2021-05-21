@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class HomeWorkApp {
@@ -20,8 +21,17 @@ public class HomeWorkApp {
  пройти по нему циклом, и числа меньшие 6 умножить на 2;*/
 
         int[] array3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        arrayMod2(array3);
+        arrayMod3(array3);
 
+/*4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов
+ одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами
+  (можно только одну из диагоналей, если обе сложно). Определить элементы одной из
+   диагоналей можно по следующему принципу: индексы таких элементов равны, то есть
+    [0][0], [1][1], [2][2], …, [n][n];
+ */
+        int[][] array4 = new int[10][10];
+        arrayInit4(array4);
+        //arrayPrint(array4);
 
     }
 
@@ -38,6 +48,25 @@ public class HomeWorkApp {
         }
     }
 
+    static void arrayInit4(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i][array[i].length-(1+i)] = 1;
+            for(int j = 0; j < array[i].length; j++){
+                if(i == j){ array[i][j] = 1;}
+            }
+        }
+    }
+    static void arrayPrint(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println();
+            for(int j = 0; j < array[i].length;j++){
+                if(i == j){ array[i][j] = 1;}
+                System.out.print(array[i][j]);
+            }
+        }
+    }
+
+
     static void arrayMod1(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == 0) {
@@ -48,7 +77,7 @@ public class HomeWorkApp {
         }
     }
 
-    static void arrayMod2(int[] array) {
+    static void arrayMod3(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) { array[i] = array[i] * 2; }
         }
