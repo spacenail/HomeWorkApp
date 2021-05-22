@@ -58,6 +58,19 @@ public class HomeWorkApp {
 
         //int[] array7 = {2, 2, 2, 1, 2, 2, 10, 1};
         //System.out.println(arrayMod7(array7));
+
+/* 8. *** Написать метод, которому на вход подается одномерный массив и
+число n (может быть положительным, или отрицательным), при этом метод должен
+ сместить все элементы массива на n позиций. Элементы смещаются циклично. Для
+ усложнения задачи нельзя пользоваться вспомогательными массивами. Примеры:
+ [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ];
+ [ 3, 5, 6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ].
+ При каком n в какую сторону сдвиг можете выбирать сами.
+ */
+        int[] array8 = {3, 5, 6, 1};
+        arrayMod8(array8, -2);
+        //arrayPrint(array8);
+
     }
 
 
@@ -134,11 +147,32 @@ public class HomeWorkApp {
         }
         for (int i = 0; i < array.length; i++) {
             sumL += array[i];
-            sumR -=array[i];
-            if (sumL == sumR) { return true; }
+            sumR -= array[i];
+            if (sumL == sumR) {
+                return true;
+            }
         }
         return false;
     }
+
+    static void arrayMod8(int[] array, int n) {
+        int temp = 0;
+        if (n < 0) {
+            for (int i = 1; i <= Math.abs(n); i++) {
+                for (int j = 0; j < array.length - 1; j++) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        } else {
+            for (int i = 1; i <= n; i++) {
+                for (int j = array.length - 1; j > 0; j--) {
+                    temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
+            }
+        }
+    }
 }
-
-
