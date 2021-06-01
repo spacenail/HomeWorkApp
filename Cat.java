@@ -16,6 +16,6 @@ public class Cat extends Animal{
 
     @Override
     void swim(int distance) {
-        System.out.printf("Кот %s утонул :( - кошки не умеют плавать...", name);
+        System.out.printf("Кот %s не умеет плавать(как и все кошки)", name);
     }
 }

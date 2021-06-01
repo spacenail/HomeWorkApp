@@ -1,11 +1,11 @@
 abstract class Animal {
 protected String name;
-private int quantityAnimals = 0;
+private static int quantityAnimals;
 
 abstract void swim(int distance);
 abstract void run(int distance);
 
-protected int getQuantityAnimals(){
+protected static int getQuantityAnimals(){
     return quantityAnimals;
 }
 
