@@ -8,14 +8,14 @@ public class Cat extends Animal{
     @Override
     void run(int distance) {
         if(distance > maxRunDistance) {
-            System.out.printf("%s - очень старался, но пробежал только %dм \n", name, maxRunDistance);
+            System.out.printf("Кот %s - очень старался, но пробежал только %dм \n", name, maxRunDistance);
         } else {
-            System.out.printf("%s - пробежал %dм \n", name, distance);
+            System.out.printf("Кот %s - пробежал %dм \n", name, distance);
         }
     }
 
     @Override
     void swim(int distance) {
-        System.out.printf("Кот %s не умеет плавать(как и все кошки)", name);
+        System.out.printf("Кот %s не умеет плавать(как и все кошки)\n", name);
     }
 }
