@@ -1,5 +1,10 @@
 public class Cat extends Animal{
     private int maxRunDistance = 200;
+
+    public Cat(String name){
+        super(name);
+    }
+
     @Override
     void run(int distance) {
         if(distance > maxRunDistance) {

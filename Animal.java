@@ -9,7 +9,7 @@ protected int getQuantityAnimals(){
     return quantityAnimals;
 }
 
-Animal(String name){
+public Animal(String name){
     this.name = name;
     quantityAnimals++;
 }
