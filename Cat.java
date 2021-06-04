@@ -1,21 +1,27 @@
 import java.util.Random;
 
 class Cat {
+    private String name;
     private boolean satiety;
     private int appetit;
 
-    public Cat(){
+    Cat(String name){
+        this.name = name;
         satiety = false;
         Random rnd = new Random();
         appetit = rnd.nextInt(21);
     }
 
-    public boolean getSatiety() {
-        return satiety;
+
+    void eat(Plate p){
+    if(p.decreaseFood(appetit)) { satiety = true; }
     }
 
-    public void setSatiety(boolean satiety) {
-        this.satiety = satiety;
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", satiety=" + satiety +
+                '}';
     }
-
 }
