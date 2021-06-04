@@ -1,7 +1,7 @@
 class HomeWorkApp {
     public static void main(String[] args) {
         Plate plate = new Plate(20);
-        System.out.println(plate.toString());
+        System.out.println(plate);
         Cat[] cat = {
                 new Cat("Basil"),
                 new Cat("Kis"),
@@ -10,7 +10,7 @@ class HomeWorkApp {
         };
         for (int i = 0; i < cat.length; i++) {
             cat[i].eat(plate);
-            System.out.println(cat[i].toString());
+            System.out.println(cat[i]);
         }
     }
 }

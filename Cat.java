@@ -1,9 +1,14 @@
 import java.util.Random;
 
 class Cat {
-    private String name;
+    private final String name;
     private boolean satiety;
-    private int appetit;
+    private final int appetit;
+
+  /*
+  3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны).
+   Если коту удалось покушать (хватило еды), сытость = true.
+   */
 
     Cat(String name){
         this.name = name;
@@ -12,7 +17,10 @@ class Cat {
         appetit = rnd.nextInt(21) + 1;
     }
 
-
+/*
+2. Сделать так, чтобы в тарелке с едой не могло получиться отрицательного количества еды
+ (например, в миске 10 еды, а кот пытается покушать 15-20).
+ */
     void eat(Plate p){
     if(p.decreaseFood(appetit)) { satiety = true; }
     }
