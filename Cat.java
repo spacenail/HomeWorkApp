@@ -18,7 +18,11 @@ class Cat {
     }
 
     void eat(Plate p){
-    if(p.decreaseFood(appetit)) { satiety = true; }
+    if(p.decreaseFood(appetit)) {
+        satiety = true;
+    } else {
+        satiety = false;
+    }
     }
 
     @Override

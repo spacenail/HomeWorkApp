@@ -12,5 +12,8 @@ class HomeWorkApp {
             cat[i].eat(plate);
             System.out.println(cat[i]);
         }
+        cat[0].eat(plate);
+        System.out.println(cat[0]);
+        System.out.println(plate);
     }
 }
