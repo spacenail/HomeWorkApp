@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class CalculatorWindow extends JFrame {
     private JTextField inputArea;
-    private Font font = new Font(Font.SANS_SERIF,0,20);
+    private final Font font = new Font(Font.SANS_SERIF, Font.PLAIN,20);
 
     public CalculatorWindow(){
         setFont(font);
@@ -52,6 +52,7 @@ public class CalculatorWindow extends JFrame {
 
         JButton calc = new JButton("=");
         calc.setFont(font);
+        calc.addActionListener(new CalcButtonActionListener(inputArea));
         bottom.add(calc);
 
         return bottom;
@@ -60,25 +61,25 @@ public class CalculatorWindow extends JFrame {
     private JPanel createEastPanel(){
         JPanel west = new JPanel();
         west.setLayout(new GridLayout(4,1));
-        JButton multiply = new JButton("*");
-        multiply.setFont(font);
-        west.add(multiply);
-        JButton summary = new JButton("+");
-        summary.setFont(font);
-        west.add(summary);
-        JButton subtraction = new JButton("-");
-        subtraction.setFont(font);
-        west.add(subtraction);
-        JButton divide = new JButton("/");
-        divide.setFont(font);
-        west.add(divide);
+        west.add(addButton("+"));
+        west.add(addButton("*"));
+        west.add(addButton("-"));
+        west.add(addButton("/"));
         return west;
+    }
+
+    private JButton addButton(String s){
+        JButton btn = new JButton(s);
+        btn.addActionListener(e -> inputArea.setText(inputArea.getText()+s));
+        btn.setFont(font);
+        return btn;
     }
 
     private JMenuBar createMenuBar(){
         JMenuBar menuBar = new JMenuBar();
         JMenu file = new JMenu("File");
         JMenuItem exit = new JMenuItem("Exit");
+        exit.addActionListener(e -> System.exit(0));
         file.add(exit);
         menuBar.add(file);
         return menuBar;
