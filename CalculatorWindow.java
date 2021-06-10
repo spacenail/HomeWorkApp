@@ -65,10 +65,10 @@ public class CalculatorWindow extends JFrame {
         west.add(addButton("*"));
         west.add(addButton("-"));
         west.add(addButton("/"));
-        JButton squareBtn = new JButton("^2");
-        squareBtn.addActionListener
-                (e -> inputArea.setText(String.valueOf(Integer.parseInt(inputArea.getText())*Integer.parseInt(inputArea.getText()))));
-        west.add(squareBtn);
+        JButton sqrtBtn = new JButton("sqrt");
+        sqrtBtn.addActionListener
+                (e -> inputArea.setText(String.valueOf(Math.sqrt(Integer.parseInt(inputArea.getText())))));
+        west.add(sqrtBtn);
         return west;
     }
 

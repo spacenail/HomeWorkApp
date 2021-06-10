@@ -39,9 +39,6 @@ public class CalcButtonActionListener implements ActionListener {
             case ("/"):
                 summary /= b;
                 break;
-            case ("square"):
-                summary = summary * summary;
-                break;
         }
         return summary;
     }
