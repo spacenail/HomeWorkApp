@@ -60,11 +60,15 @@ public class CalculatorWindow extends JFrame {
 
     private JPanel createEastPanel(){
         JPanel west = new JPanel();
-        west.setLayout(new GridLayout(4,1));
+        west.setLayout(new GridLayout(5,1));
         west.add(addButton("+"));
         west.add(addButton("*"));
         west.add(addButton("-"));
         west.add(addButton("/"));
+        JButton squareBtn = new JButton("^2");
+        squareBtn.addActionListener
+                (e -> inputArea.setText(String.valueOf(Integer.parseInt(inputArea.getText())*Integer.parseInt(inputArea.getText()))));
+        west.add(squareBtn);
         return west;
     }
 
